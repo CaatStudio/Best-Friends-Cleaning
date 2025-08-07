@@ -1300,21 +1300,13 @@ body {
 
 /* === NAVIGATION FIXES === */
 
-/* Desktop navigation styles for wider screens (≥1024px) */
 @media (min-width: 1024px) {
   .nav-desktop {
-    display: block;
-  }
-
-  .nav-desktop ul {
-    list-style: none;
     display: flex;
     gap: 1.5rem;
-    margin: 0;
-    padding: 0;
   }
 
-  .nav-desktop ul li a {
+  .nav-desktop a {
     text-decoration: none;
     color: var(--primary-color);
     font-weight: 600;
@@ -1322,7 +1314,7 @@ body {
     transition: color 0.3s ease, border-bottom 0.3s ease;
   }
 
-  .nav-desktop ul li a:hover {
+  .nav-desktop a:hover {
     color: var(--secondary-color);
     border-bottom: 2px solid var(--secondary-color);
   }
@@ -1332,7 +1324,6 @@ body {
   }
 }
 
-/* Mobile navigation styles for smaller screens (≤1023px) */
 @media (max-width: 1023px) {
   .nav-desktop {
     display: none;
@@ -1353,6 +1344,7 @@ body {
     z-index: 1002;
   }
 }
+
 
 /* Mobile menu sliding animation */
 .mobile-menu {
@@ -1413,6 +1405,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
