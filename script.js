@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initTestimonialDots();
 });
 
-// Expose currentSlide globally if you want to keep HTML onclick (optional)
+// Optional global for HTML onclick attributes, can be removed if unused
 window.currentSlide = function(n) {
   showSlides(slideIndex = n);
 };
