@@ -1130,9 +1130,12 @@ body {
 }
 
 .map-placeholder {
-  height: 60vh; /* 60% of viewport height */
+  width: 100%;
+  height: 60vh;
   min-height: 400px;
   max-height: 700px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* MEDIA QUERIES PARA RESPONSIVE */
@@ -1482,4 +1485,5 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
