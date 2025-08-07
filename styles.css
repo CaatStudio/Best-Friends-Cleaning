@@ -1325,28 +1325,44 @@ body {
 
 /* === NAVIGATION FIXES === */
 
-/* Ensure hamburger is visible on smaller screens */
+/* Desktop nav styles for wider screens */
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: block;
+  }
+
+  .nav-desktop ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav-desktop ul li a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+  }
+
+  .nav-desktop ul li a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Mobile styles for smaller screens */
 @media (max-width: 1023px) {
-.nav-desktop ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-  margin: 0;
-  padding: 0;
-}
+  .nav-desktop {
+    display: none;
+  }
 
-.nav-desktop ul li a {
-  text-decoration: none;
-  color: var(--primary-color);
-  font-weight: 600;
-  padding: 0.5rem 0;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-}
-
-.nav-desktop ul li a:hover {
-  color: var(--secondary-color);
-  border-bottom: 2px solid var(--secondary-color);
-}
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -1416,6 +1432,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
