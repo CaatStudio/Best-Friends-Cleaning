@@ -21,7 +21,7 @@ body {
 /* Brand Colors */
 :root {
     --primary-color: #4A90E2;      /* Light Blue */
-    --secondary-color: #7ED321;     /* Green */
+    --secondary-color: #50C878;     /* Green */
     --accent-color: #50C878;        /* Eco Green */
     --text-dark: #333333;
     --text-light: #666666;
@@ -1365,4 +1365,5 @@ body {
     color: #555;
 
 }
+
 
