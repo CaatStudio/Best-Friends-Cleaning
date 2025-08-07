@@ -143,38 +143,39 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  const slides = document.querySelectorAll(".testimonial-item");
-  const dots = document.querySelectorAll(".dot");
-  let currentIndex = 0;
-  let intervalId;
+  // Existing code (gallery slider init)
+  updateImages(0);
+  setSliderPosition(50);
 
-  function showSlide(index) {
-    slides.forEach((slide, i) => {
-      slide.style.display = i === index ? "block" : "none";
-      dots[i].classList.toggle("active", i === index);
-    });
-    currentIndex = index;
+  // Testimonial slider code
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Make currentSlide globally accessible for onclick handlers in HTML
+  window.currentSlide = function(n) {
+    showSlides(slideIndex = n);
+  };
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("testimonial-item");
+    const dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      slides[i].classList.remove("active");
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
   }
-
-  function nextSlide() {
-    let nextIndex = (currentIndex + 1) % slides.length;
-    showSlide(nextIndex);
-  }
-
-  function resetInterval() {
-    clearInterval(intervalId);
-    intervalId = setInterval(nextSlide, 5000);
-  }
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-      showSlide(i);
-      resetInterval();
-    });
-  });
-
-  showSlide(currentIndex);
-  intervalId = setInterval(nextSlide, 5000);
 });
 
 
