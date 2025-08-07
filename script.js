@@ -146,3 +146,39 @@ document.addEventListener("DOMContentLoaded", () => {
   updateImages(0);
   setSliderPosition(50);
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+  // Existing code (gallery slider init)
+  updateImages(0);
+  setSliderPosition(50);
+
+  // Testimonial slider code
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Make currentSlide globally accessible for onclick handlers in HTML
+  window.currentSlide = function(n) {
+    showSlides(slideIndex = n);
+  };
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("testimonial-item");
+    const dots = document.getElementsByClassName("dot");
+
+    if (n > slides.length) { slideIndex = 1; }
+    if (n < 1) { slideIndex = slides.length; }
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      slides[i].classList.remove("active");
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+  }
+});
