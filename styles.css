@@ -1423,6 +1423,25 @@ body {
   }
 }
 
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex !important;
+    gap: 2rem;
+  }
+  .mobile-menu-btn {
+    display: none !important;
+  }
+}
+
+/* === FOOTER DESKTOP LAYOUT FIX === */
+@media (min-width: 768px) {
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 3rem; /* more space between columns */
+  }
+}
+
 
 
 
