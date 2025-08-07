@@ -67,7 +67,6 @@ let isDragging = false;
 // Update the slider position and clip-path
 function setSliderPosition(percent) {
   percent = Math.min(100, Math.max(0, percent));
-  // Set CSS variable on container for after image clip polygon
   container.style.setProperty('--slider-pos', percent + '%');
   slider.style.left = percent + '%';
 }
@@ -84,7 +83,6 @@ function updateImages(index) {
   setSliderPosition(50);
 }
 
-// Event Listeners for arrows
 prevBtn.addEventListener("click", () => {
   updateImages(currentIndex - 1);
 });
@@ -93,7 +91,6 @@ nextBtn.addEventListener("click", () => {
   updateImages(currentIndex + 1);
 });
 
-// Drag slider logic
 container.addEventListener("mousedown", (e) => {
   if (e.target === slider || slider.contains(e.target)) {
     isDragging = true;
@@ -143,37 +140,36 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  // Existing code (gallery slider init)
   updateImages(0);
   setSliderPosition(50);
-
-  // Testimonial slider code
-  let slideIndex = 1;
+  
   showSlides(slideIndex);
-
-  // Make currentSlide globally accessible for onclick handlers in HTML
-  window.currentSlide = function(n) {
-    showSlides(slideIndex = n);
-  };
-
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("testimonial-item");
-    const dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      slides[i].classList.remove("active");
-    }
-
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    slides[slideIndex - 1].classList.add("active");
-    dots[slideIndex - 1].classList.add("active");
-  }
 });
+
+let slideIndex = 1;
+
+function showSlides(n) {
+  const slides = document.getElementsByClassName("testimonial-item");
+  const dots = document.getElementsByClassName("dot");
+
+  if (n > slides.length) { slideIndex = 1; }
+  if (n < 1) { slideIndex = slides.length; }
+
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+    slides[i].classList.remove("active");
+  }
+
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].classList.remove("active");
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].classList.add("active");
+  dots[slideIndex - 1].classList.add("active");
+}
+
+// Make currentSlide globally accessible for onclick handlers in HTML
+window.currentSlide = function(n) {
+  showSlides(slideIndex = n);
+};
