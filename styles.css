@@ -1186,6 +1186,13 @@ body {
     margin-bottom: 2rem;
 }
 
+/* 📌 Add this block to enable columns on desktop */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
 .footer-section h3 {
     font-size: 1.25rem;
     font-weight: bold;
@@ -1490,6 +1497,7 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
 
