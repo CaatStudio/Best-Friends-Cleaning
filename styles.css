@@ -1298,12 +1298,9 @@ body {
   }
 }
 
-
-
-
 /* === NAVIGATION FIXES === */
 
-/* Desktop nav styles for wider screens */
+/* Desktop navigation styles for wider screens (≥1024px) */
 @media (min-width: 1024px) {
   .nav-desktop {
     display: block;
@@ -1335,7 +1332,7 @@ body {
   }
 }
 
-/* Mobile styles for smaller screens */
+/* Mobile navigation styles for smaller screens (≤1023px) */
 @media (max-width: 1023px) {
   .nav-desktop {
     display: none;
@@ -1357,17 +1354,23 @@ body {
   }
 }
 
-/* Make sure mobile menu slides from the left */
+/* Mobile menu sliding animation */
 .mobile-menu {
-  left: -100%;
+  position: fixed; /* add this if your menu should overlay content */
+  top: 0;
+  left: -100%;  /* hidden off-screen */
   right: auto;
+  height: 100vh; /* full viewport height */
+  width: 250px;  /* adjust width as needed */
+  background-color: var(--white);
   transition: left 0.3s ease;
+  z-index: 1001; /* below the button */
+  overflow-y: auto; /* scroll if content overflows */
 }
 
 .mobile-menu.active {
-  left: 0;
+  left: 0; /* slide in */
 }
-
 /* === CONTACT FORM MOBILE CLEANUP === */
 
 @media (max-width: 480px) {
@@ -1410,6 +1413,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
