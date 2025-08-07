@@ -620,6 +620,7 @@ body {
 
 
 /* Testimonials */
+/* Testimonials */
 .testimonials {
     padding: 4rem 0;
     background-color: var(--bg-section);
@@ -652,6 +653,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 0.5rem;
+    margin-top: 1rem;
 }
 
 .testimonial-dot {
@@ -691,27 +693,6 @@ body {
 .testimonial-author {
     font-weight: bold;
     color: var(--primary-color);
-}
-
-.carousel-dots {
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: none;
-    background-color: var(--border-light);
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.dot.active,
-.dot:hover {
-    background-color: var(--primary-color);
 }
 
 /* Call to Action */
@@ -1365,4 +1346,5 @@ body {
     color: #555;
 
 }
+
 
