@@ -143,7 +143,7 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  // Your existing gallery init code
+  // Your existing gallery slider init code
   updateImages(0);
   setSliderPosition(50);
 
@@ -180,14 +180,14 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function startAutoSlide() {
-    slideTimer = setInterval(nextSlide, 5000); // change slide every 5 seconds
+    slideTimer = setInterval(nextSlide, 5000);
   }
 
   function stopAutoSlide() {
     clearInterval(slideTimer);
   }
 
-  // Expose currentSlide for dot buttons, reset timer on manual click
+  // Make currentSlide globally accessible for dot buttons
   window.currentSlide = function(n) {
     slideIndex = n;
     showSlides(slideIndex);
@@ -195,7 +195,8 @@ document.addEventListener("DOMContentLoaded", () => {
     startAutoSlide();
   };
 
-  // Initialize
   showSlides(slideIndex);
   startAutoSlide();
 });
+
+
