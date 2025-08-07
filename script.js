@@ -143,45 +143,38 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  updateImages(0);
-  setSliderPosition(50);
-
-  let slideIndex = 0;
   const slides = document.querySelectorAll(".testimonial-item");
   const dots = document.querySelectorAll(".dot");
+  let currentIndex = 0;
+  let intervalId;
 
   function showSlide(index) {
     slides.forEach((slide, i) => {
       slide.style.display = i === index ? "block" : "none";
-      slide.classList.toggle("active", i === index);
       dots[i].classList.toggle("active", i === index);
     });
-    slideIndex = index;
+    currentIndex = index;
   }
 
   function nextSlide() {
-    let nextIndex = (slideIndex + 1) % slides.length;
+    let nextIndex = (currentIndex + 1) % slides.length;
     showSlide(nextIndex);
   }
 
-  // Click on dots
+  function resetInterval() {
+    clearInterval(intervalId);
+    intervalId = setInterval(nextSlide, 5000);
+  }
+
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       showSlide(i);
-      resetAutoSlide();
+      resetInterval();
     });
   });
 
-  // Auto slide
-  let autoSlide = setInterval(nextSlide, 5000);
-
-  function resetAutoSlide() {
-    clearInterval(autoSlide);
-    autoSlide = setInterval(nextSlide, 5000);
-  }
-
-  // Init first slide
-  showSlide(slideIndex);
+  showSlide(currentIndex);
+  intervalId = setInterval(nextSlide, 5000);
 });
 
 
