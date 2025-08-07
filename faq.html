@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ - Best Friends Cleaning Company, LLC</title>
+    <meta name="description" content="Frequently asked questions about our cleaning services, supplies, scheduling, and satisfaction guarantee.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header sticky">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <div class="logo-placeholder">
+                        <span class="logo-text">Best Friends Cleaning</span>
+                    </div>
+                </div>
+                <nav class="nav-desktop">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="faq.html" class="active">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="tel:+18018315004" class="btn btn-call">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="contact.html" class="btn btn-primary">Get a Free Estimate</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="logo">
+                        <span class="logo-text">Best Friends Cleaning</span>
+                    </div>
+                    <button class="mobile-menu-close" id="mobileMenuClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="mobile-menu-footer">
+                    <a href="tel:+18018315004" class="btn btn-call btn-full">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-full">Get a Free Estimate</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Frequently Asked Questions</h1>
+            <p>Find answers to common questions about our services</p>
+        </div>
+    </section>
+
+    <!-- FAQ Content -->
+    <section class="faq-content">
+        <div class="container">
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>
+                            <i class="fas fa-spray-can"></i>
+                            Do you bring your own cleaning supplies?
+                        </h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we bring all our own professional-grade cleaning supplies and equipment. Our team comes fully equipped with everything needed to clean your space thoroughly. We use high-quality, effective cleaning products that are safe for your family and pets.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>
+                            <i class="fas fa-leaf"></i>
+                            Are your products eco-friendly?
+                        </h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We prioritize the health of your family and the environment. We use eco-friendly, non-toxic cleaning products that are safe for children, pets, and the planet. Our green cleaning solutions are just as effective as traditional cleaners but without the harmful chemicals.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>
+                            <i class="fas fa-home"></i>
+                            Do I need to be home during the cleaning?
+                        </h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>No, you don't need to be home during the cleaning. Many of our clients prefer to leave us a key or provide access instructions so they can go about their day while we work. Our team is fully bonded and insured, and we treat your home with the utmost respect and care.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>
+                            <i class="fas fa-calendar-alt"></i>
+                            How do I schedule or cancel an appointment?
+                        </h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Scheduling is easy! You can call us at 801-831-5004, email us at bestfriendscleaningcompany@gmail.com, or fill out our contact form. For cancellations or rescheduling, we ask for at least 24 hours notice to avoid any fees. We understand that life happens and we'll work with you to find a convenient time.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <h3>
+                            <i class="fas fa-check-circle"></i>
+                            What happens if I'm not satisfied with the service?
+                        </h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Your satisfaction is our top priority! We offer a 100% satisfaction guarantee. If you're not completely happy with our service, please contact us within 24 hours and we'll return to re-clean any areas of concern at no additional charge. We're not satisfied until you are!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Still have questions? We're here to help!</h2>
+                <div class="cta-buttons">
+                    <a href="tel:+18018315004" class="btn btn-call btn-large">
+                        <i class="fas fa-phone"></i>
+                        Call Us Now
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-large">Get Your Free Estimate</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>801-831-5004</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>bestfriendscleaningcompany@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon–Fri: 8 am–8 pm</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Airbnb Cleaning</a></li>
+                        <li><a href="services.html">Residential Housekeeping</a></li>
+                        <li><a href="services.html">Move-In/Move-Out</a></li>
+                        <li><a href="services.html">Post-Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Best Friends Cleaning Company, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

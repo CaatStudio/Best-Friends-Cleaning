@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Best Friends Cleaning Company, LLC</title>
+    <meta name="description" content="Professional, eco-friendly cleaning services across the Wasatch Front. We clean your house to make it a lovely home again!">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <!-- Sticky Header -->
+    <header class="header sticky">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <a href="index.html" class="logo-link">
+                        <span class="logo-text">Best Friends Cleaning</span>
+                    </a>
+                </div>
+                <nav class="nav-desktop">
+                    <a href="index.html" class="active">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="nav-actions">
+                    <a href="tel:+18018315004" class="btn btn-call">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="mailto:bestfriendscleaningcompany@gmail.com" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                    <a href="contact.html" class="btn btn-primary">Get Estimate</a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <div class="mobile-menu-content">
+                <div class="mobile-menu-header">
+                    <div class="logo">
+                        <span class="logo-text">Best Friends Cleaning</span>
+                    </div>
+                    <button class="mobile-menu-close" id="mobileMenuClose">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <nav class="mobile-nav">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Services</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="mobile-menu-footer">
+                    <a href="tel:+18018315004" class="btn btn-call btn-full">
+                        <i class="fas fa-phone"></i>
+                        Call Now
+                    </a>
+                    <a href="mailto:bestfriendscleaningcompany@gmail.com" class="btn btn-outline btn-full">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                    <a href="contact.html" class="btn btn-primary btn-full">Get Estimate</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HOME PAGE CONTENT ONLY -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-background">
+                <!-- IMAGE PLACEHOLDER: Sparkling clean home -->
+                <div class="image-placeholder hero-image">
+                    <i class="fas fa-home"></i>
+                    <p>SPARKLING CLEAN HOME IMAGE<br>Recommended size: 1920x1080px</p>
+                </div>
+            </div>
+            <div class="hero-overlay">
+                <div class="container">
+                    <div class="hero-content">
+                        <h1>We clean your house to make it a lovely home again!</h1>
+                        <p class="hero-subtitle">Professional, eco-friendly cleaning services across the Wasatch Front</p>
+                        <div class="hero-buttons">
+                            <a href="contact.html" class="btn btn-primary btn-large">Book Now</a>
+                            <a href="contact.html" class="btn btn-secondary btn-large">Get Free Quote</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="services-preview">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Our Cleaning Services</h2>
+                    <p>Professional cleaning solutions for every need</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bed"></i>
+                        </div>
+                        <h3>Airbnb Cleaning</h3>
+                        <p>Keep your rental property spotless for guests</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Residential Cleaning</h3>
+                        <p>Regular housekeeping for your home</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                        <h3>Move In/Out</h3>
+                        <p>Complete cleaning for moving transitions</p>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="services.html" class="btn btn-outline">View All Services</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Carousel -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="section-header">
+                    <h2>What Our Clients Say</h2>
+                </div>
+                <div class="testimonials-carousel" id="testimonialsCarousel">
+                    <div class="testimonial-item active">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Best Friends Cleaning transformed my home! Their attention to detail is incredible and they use eco-friendly products that are safe for my family."</p>
+                            <div class="testimonial-author">– Sarah Johnson, Salt Lake City</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Reliable, professional, and thorough. Milly and her team have been cleaning our Airbnb for over a year. Guests always comment on how clean everything is!"</p>
+                            <div class="testimonial-author">– David Martinez, Property Owner</div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"They helped us with our move-out cleaning and we got our full deposit back! Their service exceeded our expectations."</p>
+                            <div class="testimonial-author">– Jennifer Chen, West Jordan</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-dots">
+                    <button class="dot active" onclick="currentSlide(1)"></button>
+                    <button class="dot" onclick="currentSlide(2)"></button>
+                    <button class="dot" onclick="currentSlide(3)"></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="cta">
+            <div class="container">
+                <div class="cta-content">
+                    <h2>Ready for a spotless home?</h2>
+                    <p>Contact us today for your free estimate!</p>
+                    <div class="cta-buttons">
+                        <a href="tel:+18018315004" class="btn btn-call btn-large">
+                            <i class="fas fa-phone"></i>
+                            Call Now
+                        </a>
+                        <a href="contact.html" class="btn btn-primary btn-large">Get Free Estimate</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>801-831-5004</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>bestfriendscleaningcompany@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon–Fri: 8 am–8 pm</span>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="services.html">Airbnb Cleaning</a></li>
+                        <li><a href="services.html">Residential Housekeeping</a></li>
+                        <li><a href="services.html">Move-In/Move-Out</a></li>
+                        <li><a href="services.html">Post-Construction</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Follow Us</h3>
+                    <div class="social-links">
+                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Best Friends Cleaning Company, LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
