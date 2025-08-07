@@ -143,60 +143,45 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  // Your existing gallery slider init code
   updateImages(0);
   setSliderPosition(50);
 
-  let slideIndex = 1;
-  let slideTimer;
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".testimonial-item");
+  const dots = document.querySelectorAll(".dot");
 
-  function showSlides(n) {
-    const slides = document.getElementsByClassName("testimonial-item");
-    const dots = document.getElementsByClassName("dot");
-
-    if (n > slides.length) { slideIndex = 1; }
-    if (n < 1) { slideIndex = slides.length; }
-
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-      slides[i].classList.remove("active");
-    }
-
-    for (let i = 0; i < dots.length; i++) {
-      dots[i].classList.remove("active");
-    }
-
-    slides[slideIndex - 1].style.display = "block";
-    slides[slideIndex - 1].classList.add("active");
-    dots[slideIndex - 1].classList.add("active");
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.style.display = i === index ? "block" : "none";
+      slide.classList.toggle("active", i === index);
+      dots[i].classList.toggle("active", i === index);
+    });
+    slideIndex = index;
   }
 
   function nextSlide() {
-    slideIndex++;
-    if (slideIndex > document.getElementsByClassName("testimonial-item").length) {
-      slideIndex = 1;
-    }
-    showSlides(slideIndex);
+    let nextIndex = (slideIndex + 1) % slides.length;
+    showSlide(nextIndex);
   }
 
-  function startAutoSlide() {
-    slideTimer = setInterval(nextSlide, 5000);
+  // Click on dots
+  dots.forEach((dot, i) => {
+    dot.addEventListener("click", () => {
+      showSlide(i);
+      resetAutoSlide();
+    });
+  });
+
+  // Auto slide
+  let autoSlide = setInterval(nextSlide, 5000);
+
+  function resetAutoSlide() {
+    clearInterval(autoSlide);
+    autoSlide = setInterval(nextSlide, 5000);
   }
 
-  function stopAutoSlide() {
-    clearInterval(slideTimer);
-  }
-
-  // Make currentSlide globally accessible for dot buttons
-  window.currentSlide = function(n) {
-    slideIndex = n;
-    showSlides(slideIndex);
-    stopAutoSlide();
-    startAutoSlide();
-  };
-
-  showSlides(slideIndex);
-  startAutoSlide();
+  // Init first slide
+  showSlide(slideIndex);
 });
 
 
