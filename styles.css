@@ -1334,17 +1334,17 @@ body {
   }
 
   /* Mobile Menu */
-  .mobile-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100%;
-    background-color: #fff;
-    z-index: 1001;
-    transition: right 0.3s ease-in-out;
-    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
-  }
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* pushes it to the right */
+}
 
   .mobile-menu.open {
     right: 0;
@@ -1490,6 +1490,7 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
 
