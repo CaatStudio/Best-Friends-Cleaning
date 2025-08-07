@@ -1298,11 +1298,12 @@ body {
   }
 }
 
-/* Desktop navigation styles for wider screens (≥1024px) */
+/* Desktop navigation styles (screens 1024px and wider) */
 @media (min-width: 1024px) {
   .nav-desktop {
     display: flex;
-    gap: 1.5rem;
+    gap: 2rem;
+    align-items: center;
   }
 
   .nav-desktop a {
@@ -1313,22 +1314,26 @@ body {
     transition: color 0.3s ease, border-bottom 0.3s ease;
   }
 
+  .nav-desktop a.active,
   .nav-desktop a:hover {
     color: var(--secondary-color);
     border-bottom: 2px solid var(--secondary-color);
   }
 
+  /* Hide hamburger button on desktop */
   .mobile-menu-btn {
     display: none;
   }
 }
 
-/* Mobile navigation styles for smaller screens (≤1023px) */
+/* Mobile navigation styles (screens 1023px and below) */
 @media (max-width: 1023px) {
+  /* Hide desktop nav on mobile */
   .nav-desktop {
     display: none;
   }
 
+  /* Show hamburger button on mobile */
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -1344,7 +1349,6 @@ body {
     z-index: 1002;
   }
 }
-
 /* Mobile menu sliding animation */
 .mobile-menu {
   position: fixed; /* add this if your menu should overlay content */
@@ -1404,6 +1408,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
