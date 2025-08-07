@@ -1400,3 +1400,86 @@ body {
   }
 }
 
+
+
+
+/* === NAVIGATION FIXES === */
+
+/* Show desktop nav and hide mobile button on large screens */
+@media (min-width: 1024px) {
+  .nav-desktop {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .mobile-menu-btn {
+    display: none;
+  }
+}
+
+/* Ensure hamburger is visible on smaller screens */
+@media (max-width: 1023px) {
+  .nav-desktop {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+  }
+}
+
+/* Make sure mobile menu slides from the left */
+.mobile-menu {
+  left: -100%;
+  right: auto;
+  transition: left 0.3s ease;
+}
+
+.mobile-menu.active {
+  left: 0;
+}
+
+/* === CONTACT FORM MOBILE CLEANUP === */
+
+@media (max-width: 480px) {
+  .contact-content {
+    padding: 2rem 1rem;
+  }
+
+  .contact-info,
+  .contact-form-container {
+    padding: 1.25rem 1rem;
+  }
+
+  .contact-form .form-group {
+    margin-bottom: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+  }
+
+  .contact-form-container h2,
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-item .contact-text h3,
+  .contact-item .contact-text p {
+    font-size: 0.9rem;
+  }
+}
