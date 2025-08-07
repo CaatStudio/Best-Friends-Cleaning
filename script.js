@@ -138,19 +138,14 @@ container.addEventListener(
   { passive: false }
 );
 
-// Initialize gallery on DOM load
-document.addEventListener("DOMContentLoaded", () => {
-  updateImages(0);
-  setSliderPosition(50);
-
-  showSlides(slideIndex);
-});
-
+// Declare slideIndex before DOMContentLoaded
 let slideIndex = 1;
 
 function showSlides(n) {
+  console.log('showSlides called with:', n); // Debug log
+
   const slides = document.getElementsByClassName("testimonial-item");
-  const dots = document.getElementsByClassName("testimonial-dot");  // Changed here
+  const dots = document.getElementsByClassName("testimonial-dot");
 
   if (n > slides.length) { slideIndex = 1; }
   if (n < 1) { slideIndex = slides.length; }
@@ -168,6 +163,14 @@ function showSlides(n) {
   slides[slideIndex - 1].classList.add("active");
   dots[slideIndex - 1].classList.add("active");
 }
+
+// Initialize gallery and testimonials on DOM load
+document.addEventListener("DOMContentLoaded", () => {
+  updateImages(0);
+  setSliderPosition(50);
+
+  showSlides(slideIndex);
+});
 
 // Make currentSlide globally accessible for onclick handlers in HTML
 window.currentSlide = function(n) {
