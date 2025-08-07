@@ -185,13 +185,15 @@ body {
 
 @media (max-width: 600px) {
   .nav-desktop {
-    display: none !important;
+    display: none; /* try without !important */
   }
   .nav-actions .btn {
-    display: none !important;
+    display: none;
   }
   .mobile-menu-btn {
-    display: flex !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     right: 1rem;
     top: 1rem;
@@ -202,6 +204,7 @@ body {
     cursor: pointer;
   }
 }
+
 
 /* Mobile Menu */
 .mobile-menu {
@@ -1413,6 +1416,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
