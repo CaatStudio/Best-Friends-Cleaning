@@ -1343,13 +1343,9 @@ body {
     height: auto;
   }
 
-  .nav-actions {
-    width: 100%;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-top: 1rem;
-    align-items: stretch;
-  }
+.nav-actions {
+  display: none;
+}
 
   .nav-actions .btn,
   .nav-actions .btn-call,
@@ -1370,4 +1366,5 @@ body {
     display: none;
   }
 }
+
 
