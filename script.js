@@ -177,5 +177,3 @@ document.addEventListener("DOMContentLoaded", () => {
     dots[slideIndex - 1].classList.add("active");
   }
 });
-
-
