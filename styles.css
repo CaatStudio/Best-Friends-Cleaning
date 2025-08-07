@@ -1142,6 +1142,7 @@ body {
   border: 0;
   display: block;
 }
+}
 
 /* MEDIA QUERIES PARA RESPONSIVE */
 @media (max-width: 1024px) {
@@ -1182,16 +1183,8 @@ body {
 
 .footer-content {
     display: grid;
-    gap: 2rem; /* default gap for mobile */
+    gap: 2rem;
     margin-bottom: 2rem;
-}
-
-/* Multi-column layout for larger screens with more space */
-@media (min-width: 768px) {
-    .footer-content {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        gap: 3rem; /* extra space between columns */
-    }
 }
 
 .footer-section h3 {
@@ -1265,18 +1258,94 @@ body {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.875rem;
 }
-  /* Mobile Menu */
+@media (max-width: 639px) {
+  /* Existing styles */
+  .nav-actions {
+    gap: 0.25rem;
+  }
 
-.mobile-menu-btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-left: auto; /* pushes it to the right */
-}
+  .nav-actions .btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+  }
+
+  .gallery-nav-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+    margin: 0 10px;
+  }
+
+  /* Header and Navigation */
+  .header.sticky {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .nav-wrapper {
+    height: 4rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo-img {
+    max-height: 40px;
+    height: auto;
+    width: auto;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .nav-actions {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    z-index: 1002;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  /* Mobile Menu */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1001;
+    transition: right 0.3s ease-in-out;
+    box-shadow: -4px 0 8px rgba(0, 0, 0, 0.1);
+  }
 
   .mobile-menu.open {
     right: 0;
@@ -1423,29 +1492,24 @@ body {
   }
 }
 
-@media (min-width: 1024px) {
-  .nav-desktop {
-    display: flex !important;
-    gap: 2rem;
-  }
-  .mobile-menu-btn {
-    display: none !important;
+
+
+/* === MAP SECTION FIX === */
+.map-placeholder {
+  width: 100%;
+  height: 600px;        /* Force a taller height */
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .map-placeholder {
+    height: 300px; /* smaller height for tablets */
   }
 }
 
-/* === FOOTER DESKTOP LAYOUT FIX === */
-@media (min-width: 768px) {
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem; /* more space between columns */
+@media (max-width: 480px) {
+  .map-placeholder {
+    height: 250px; /* smaller height for phones */
   }
 }
-
-
-
-
-
-
-
-
