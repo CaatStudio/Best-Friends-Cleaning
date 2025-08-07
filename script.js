@@ -1,4 +1,4 @@
-// MOBILE MENU TOGGLE (keep your existing code or add this if needed)
+// MOBILE MENU TOGGLE
 const mobileMenuBtn = document.getElementById("mobileMenuBtn");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileMenuClose = document.getElementById("mobileMenuClose");
@@ -22,7 +22,7 @@ if (mobileMenuClose) {
 }
 
 const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
-mobileNavLinks.forEach((link) => {
+mobileNavLinks.forEach(link => {
   link.addEventListener("click", closeMobileMenu);
 });
 
@@ -64,14 +64,12 @@ const nextBtn = document.getElementById("galleryNextBtn");
 
 let isDragging = false;
 
-// Update the slider position and clip-path
 function setSliderPosition(percent) {
   percent = Math.min(100, Math.max(0, percent));
   container.style.setProperty('--slider-pos', percent + '%');
   slider.style.left = percent + '%';
 }
 
-// Change images and reset slider
 function updateImages(index) {
   if (index < 0) index = beforeAfterImages.length - 1;
   if (index >= beforeAfterImages.length) index = 0;
@@ -110,40 +108,31 @@ container.addEventListener("mousemove", (e) => {
   setSliderPosition(percent);
 });
 
-container.addEventListener(
-  "touchstart",
-  (e) => {
-    if (e.target === slider || slider.contains(e.target)) {
-      isDragging = true;
-      e.preventDefault();
-    }
-  },
-  { passive: false }
-);
+container.addEventListener("touchstart", (e) => {
+  if (e.target === slider || slider.contains(e.target)) {
+    isDragging = true;
+    e.preventDefault();
+  }
+}, { passive: false });
 
 window.addEventListener("touchend", () => {
   isDragging = false;
 });
 
-container.addEventListener(
-  "touchmove",
-  (e) => {
-    if (!isDragging) return;
-    const rect = container.getBoundingClientRect();
-    let x = e.touches[0].clientX - rect.left;
-    let percent = (x / rect.width) * 100;
-    setSliderPosition(percent);
-    e.preventDefault();
-  },
-  { passive: false }
-);
+container.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
+  const rect = container.getBoundingClientRect();
+  let x = e.touches[0].clientX - rect.left;
+  let percent = (x / rect.width) * 100;
+  setSliderPosition(percent);
+  e.preventDefault();
+}, { passive: false });
 
-// Declare slideIndex before DOMContentLoaded
+// TESTIMONIALS SLIDER
+
 let slideIndex = 1;
 
 function showSlides(n) {
-  console.log('showSlides called with:', n); // Debug log
-
   const slides = document.getElementsByClassName("testimonial-item");
   const dots = document.getElementsByClassName("testimonial-dot");
 
@@ -164,15 +153,25 @@ function showSlides(n) {
   dots[slideIndex - 1].classList.add("active");
 }
 
-// Initialize gallery and testimonials on DOM load
+// Add click listeners to dots to make them clickable
+function initTestimonialDots() {
+  const dots = document.getElementsByClassName("testimonial-dot");
+  for (let i = 0; i < dots.length; i++) {
+    dots[i].addEventListener("click", () => {
+      showSlides(slideIndex = i + 1);
+    });
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   updateImages(0);
   setSliderPosition(50);
 
   showSlides(slideIndex);
+  initTestimonialDots();
 });
 
-// Make currentSlide globally accessible for onclick handlers in HTML
+// Expose currentSlide globally if you want to keep HTML onclick (optional)
 window.currentSlide = function(n) {
   showSlides(slideIndex = n);
 };
