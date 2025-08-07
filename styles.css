@@ -1182,14 +1182,15 @@ body {
 
 .footer-content {
     display: grid;
-    gap: 2rem;
+    gap: 2rem; /* default gap for mobile */
     margin-bottom: 2rem;
 }
 
-/* 📌 Added: Multi-column layout for larger screens */
+/* 📌 Multi-column layout for larger screens with more gap */
 @media (min-width: 768px) {
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem; /* more space between columns on desktop */
     }
 }
 
@@ -1264,6 +1265,7 @@ body {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.875rem;
 }
+
   /* Mobile Menu */
 
 .mobile-menu-btn {
@@ -1421,6 +1423,7 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
 
