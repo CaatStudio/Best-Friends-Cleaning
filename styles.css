@@ -1291,6 +1291,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+
   }
 
   .btn-full {
@@ -1321,8 +1322,8 @@ body {
 
 /* === NAVIGATION FIXES === */
 
-/* Show desktop nav and hide mobile button on large screens */
-@media (min-width: 1024px) {
+/* Ensure hamburger is visible on smaller screens */
+@media (max-width: 1023px) {
 .nav-desktop ul {
   list-style: none;
   display: flex;
@@ -1336,24 +1337,13 @@ body {
   color: var(--primary-color);
   font-weight: 600;
   padding: 0.5rem 0;
+  transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
 .nav-desktop ul li a:hover {
   color: var(--secondary-color);
   border-bottom: 2px solid var(--secondary-color);
 }
-
-  .mobile-menu-btn {
-    display: none;
-  }
-}
-
-/* Ensure hamburger is visible on smaller screens */
-@media (max-width: 1023px) {
-  .nav-desktop {
-    display: none;
-  }
-
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -1423,6 +1413,7 @@ body {
     gap: 3rem; /* more space between columns */
   }
 }
+
 
 
 
