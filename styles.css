@@ -1131,11 +1131,16 @@ body {
 
 .map-placeholder {
   width: 100%;
-  height: 60vh;
-  min-height: 400px;
-  max-height: 700px;
+  height: 600px;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
 }
 
 /* MEDIA QUERIES PARA RESPONSIVE */
@@ -1485,5 +1490,6 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
