@@ -143,23 +143,12 @@ container.addEventListener(
 
 // Initialize gallery on DOM load
 document.addEventListener("DOMContentLoaded", () => {
-  updateImages(0);
-  setSliderPosition(50);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-  // Existing code (gallery slider init)
+  // Your existing gallery init code
   updateImages(0);
   setSliderPosition(50);
 
-  // Testimonial slider code
   let slideIndex = 1;
-  showSlides(slideIndex);
-
-  // Make currentSlide globally accessible for onclick handlers in HTML
-  window.currentSlide = function(n) {
-    showSlides(slideIndex = n);
-  };
+  let slideTimer;
 
   function showSlides(n) {
     const slides = document.getElementsByClassName("testimonial-item");
@@ -181,4 +170,32 @@ document.addEventListener("DOMContentLoaded", () => {
     slides[slideIndex - 1].classList.add("active");
     dots[slideIndex - 1].classList.add("active");
   }
+
+  function nextSlide() {
+    slideIndex++;
+    if (slideIndex > document.getElementsByClassName("testimonial-item").length) {
+      slideIndex = 1;
+    }
+    showSlides(slideIndex);
+  }
+
+  function startAutoSlide() {
+    slideTimer = setInterval(nextSlide, 5000); // change slide every 5 seconds
+  }
+
+  function stopAutoSlide() {
+    clearInterval(slideTimer);
+  }
+
+  // Expose currentSlide for dot buttons, reset timer on manual click
+  window.currentSlide = function(n) {
+    slideIndex = n;
+    showSlides(slideIndex);
+    stopAutoSlide();
+    startAutoSlide();
+  };
+
+  // Initialize
+  showSlides(slideIndex);
+  startAutoSlide();
 });
