@@ -142,7 +142,7 @@ container.addEventListener(
 document.addEventListener("DOMContentLoaded", () => {
   updateImages(0);
   setSliderPosition(50);
-  
+
   showSlides(slideIndex);
 });
 
@@ -150,7 +150,7 @@ let slideIndex = 1;
 
 function showSlides(n) {
   const slides = document.getElementsByClassName("testimonial-item");
-  const dots = document.getElementsByClassName("dot");
+  const dots = document.getElementsByClassName("testimonial-dot");  // Changed here
 
   if (n > slides.length) { slideIndex = 1; }
   if (n < 1) { slideIndex = slides.length; }
