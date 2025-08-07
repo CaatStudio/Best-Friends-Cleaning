@@ -1186,7 +1186,7 @@ body {
     margin-bottom: 2rem;
 }
 
-/* 📌 Add this block to enable columns on desktop */
+/* 📌 Added: Multi-column layout for larger screens */
 @media (min-width: 768px) {
     .footer-content {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1264,82 +1264,6 @@ body {
     color: rgba(255, 255, 255, 0.6);
     font-size: 0.875rem;
 }
-@media (max-width: 639px) {
-  /* Existing styles */
-  .nav-actions {
-    gap: 0.25rem;
-  }
-
-  .nav-actions .btn {
-    padding: 0.5rem 0.75rem;
-    font-size: 0.75rem;
-  }
-
-  .timeline-item {
-    flex-direction: column;
-    text-align: center;
-    gap: 1rem;
-  }
-
-  .quick-actions {
-    flex-direction: column;
-  }
-
-  .gallery-nav-btn {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-    margin: 0 10px;
-  }
-
-  /* Header and Navigation */
-  .header.sticky {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  }
-
-  .nav-wrapper {
-    height: 4rem;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-  }
-
-  .logo {
-    display: flex;
-    align-items: center;
-  }
-
-  .logo-img {
-    max-height: 40px;
-    height: auto;
-    width: auto;
-  }
-
-  .nav-desktop {
-    display: none;
-  }
-
-  .nav-actions {
-    display: none;
-  }
-
-  .mobile-menu-btn {
-    display: flex;
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
-    z-index: 1002;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
   /* Mobile Menu */
 
 .mobile-menu-btn {
@@ -1497,6 +1421,7 @@ body {
     font-size: 0.9rem;
   }
 }
+
 
 
 
