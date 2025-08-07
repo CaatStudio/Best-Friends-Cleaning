@@ -22,7 +22,7 @@ if (mobileMenuClose) {
 }
 
 const mobileNavLinks = document.querySelectorAll(".mobile-nav a");
-mobileNavLinks.forEach(link => {
+mobileNavLinks.forEach((link) => {
   link.addEventListener("click", closeMobileMenu);
 });
 
@@ -38,7 +38,6 @@ document.addEventListener("click", (e) => {
 });
 
 // BEFORE & AFTER GALLERY SLIDER + NAVIGATION
-
 const beforeAfterImages = [
   { before: "images/Gallery/1-before.png", after: "images/Gallery/1-after.png" },
   { before: "images/Gallery/2-before.png", after: "images/Gallery/2-after.png" },
@@ -56,8 +55,8 @@ const beforeAfterImages = [
 let currentIndex = 0;
 
 const container = document.getElementById("imageComparisonContainer");
-const beforeImage = container.querySelector(".before-image");
-const afterImage = container.querySelector(".after-image");
+const beforeImage = container?.querySelector(".before-image");
+const afterImage = container?.querySelector(".after-image");
 const slider = document.getElementById("sliderDivider");
 const prevBtn = document.getElementById("galleryPrevBtn");
 const nextBtn = document.getElementById("galleryNextBtn");
@@ -66,11 +65,13 @@ let isDragging = false;
 
 function setSliderPosition(percent) {
   percent = Math.min(100, Math.max(0, percent));
-  container.style.setProperty('--slider-pos', percent + '%');
-  slider.style.left = percent + '%';
+  container?.style.setProperty('--slider-pos', percent + '%');
+  if (slider) slider.style.left = percent + '%';
 }
 
 function updateImages(index) {
+  if (!beforeImage || !afterImage) return;
+
   if (index < 0) index = beforeAfterImages.length - 1;
   if (index >= beforeAfterImages.length) index = 0;
   currentIndex = index;
@@ -81,16 +82,16 @@ function updateImages(index) {
   setSliderPosition(50);
 }
 
-prevBtn.addEventListener("click", () => {
+prevBtn?.addEventListener("click", () => {
   updateImages(currentIndex - 1);
 });
 
-nextBtn.addEventListener("click", () => {
+nextBtn?.addEventListener("click", () => {
   updateImages(currentIndex + 1);
 });
 
-container.addEventListener("mousedown", (e) => {
-  if (e.target === slider || slider.contains(e.target)) {
+container?.addEventListener("mousedown", (e) => {
+  if (e.target === slider || slider?.contains(e.target)) {
     isDragging = true;
     e.preventDefault();
   }
@@ -100,7 +101,7 @@ window.addEventListener("mouseup", () => {
   isDragging = false;
 });
 
-container.addEventListener("mousemove", (e) => {
+container?.addEventListener("mousemove", (e) => {
   if (!isDragging) return;
   const rect = container.getBoundingClientRect();
   let x = e.clientX - rect.left;
@@ -108,8 +109,8 @@ container.addEventListener("mousemove", (e) => {
   setSliderPosition(percent);
 });
 
-container.addEventListener("touchstart", (e) => {
-  if (e.target === slider || slider.contains(e.target)) {
+container?.addEventListener("touchstart", (e) => {
+  if (e.target === slider || slider?.contains(e.target)) {
     isDragging = true;
     e.preventDefault();
   }
@@ -119,7 +120,7 @@ window.addEventListener("touchend", () => {
   isDragging = false;
 });
 
-container.addEventListener("touchmove", (e) => {
+container?.addEventListener("touchmove", (e) => {
   if (!isDragging) return;
   const rect = container.getBoundingClientRect();
   let x = e.touches[0].clientX - rect.left;
@@ -128,50 +129,46 @@ container.addEventListener("touchmove", (e) => {
   e.preventDefault();
 }, { passive: false });
 
-// TESTIMONIALS SLIDER
-
-let slideIndex = 1;
-
-function showSlides(n) {
-  const slides = document.getElementsByClassName("testimonial-item");
-  const dots = document.getElementsByClassName("testimonial-dot");
-
-  if (n > slides.length) { slideIndex = 1; }
-  if (n < 1) { slideIndex = slides.length; }
-
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-    slides[i].classList.remove("active");
-  }
-
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].classList.remove("active");
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  slides[slideIndex - 1].classList.add("active");
-  dots[slideIndex - 1].classList.add("active");
-}
-
-// Add click listeners to dots to make them clickable
-function initTestimonialDots() {
-  const dots = document.getElementsByClassName("testimonial-dot");
-  for (let i = 0; i < dots.length; i++) {
-    dots[i].addEventListener("click", () => {
-      showSlides(slideIndex = i + 1);
-    });
-  }
-}
-
+// === DOM LOADED === //
 document.addEventListener("DOMContentLoaded", () => {
+  // Init Before/After
   updateImages(0);
   setSliderPosition(50);
 
+  // === Testimonials Carousel ===
+  let slideIndex = 1;
   showSlides(slideIndex);
-  initTestimonialDots();
-});
 
-// Optional global for HTML onclick attributes, can be removed if unused
-window.currentSlide = function(n) {
-  showSlides(slideIndex = n);
-};
+  // Auto slide every 5 seconds
+  setInterval(() => {
+    slideIndex++;
+    showSlides(slideIndex);
+  }, 5000);
+
+  function showSlides(n) {
+    const slides = document.getElementsByClassName("testimonial-item");
+    const dots = document.getElementsByClassName("testimonial-dot");
+
+    if (n > slides.length) slideIndex = 1;
+    if (n < 1) slideIndex = slides.length;
+
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+      slides[i].classList.remove("active");
+    }
+
+    for (let i = 0; i < dots.length; i++) {
+      dots[i].classList.remove("active");
+    }
+
+    slides[slideIndex - 1].style.display = "block";
+    slides[slideIndex - 1].classList.add("active");
+    dots[slideIndex - 1].classList.add("active");
+  }
+
+  // Make global for use in HTML onclick
+  window.currentSlide = function(n) {
+    slideIndex = n;
+    showSlides(slideIndex);
+  };
+});
