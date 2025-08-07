@@ -7,6 +7,7 @@
     <meta name="description" content="Professional, eco-friendly cleaning services across the Wasatch Front. We clean your house to make it a lovely home again!">
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Meta tags to prevent caching during development -->
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
@@ -17,14 +18,16 @@
         <div class="container">
             <div class="nav-wrapper">
                 <div class="logo">
-                    <a href="index.html" class="logo-link">
-                        <span class="logo-text">Best Friends Cleaning</span>
-                    </a>
-                </div>
+   					<a href="index.html" class="logo-link">
+        			<img src="images/logo-landscape.png" alt="Best Friends Cleaning Logo" class="logo-img">
+   					</a>
+					</div>
+
                 <nav class="nav-desktop">
                     <a href="index.html" class="active">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
                     <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </nav>
@@ -60,6 +63,7 @@
                     <a href="index.html">Home</a>
                     <a href="about.html">About Us</a>
                     <a href="services.html">Services</a>
+                    <a href="gallery.html">Gallery</a>
                     <a href="faq.html">FAQ</a>
                     <a href="contact.html">Contact</a>
                 </nav>
@@ -82,13 +86,6 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <div class="hero-background">
-                <!-- IMAGE PLACEHOLDER: Sparkling clean home -->
-                <div class="image-placeholder hero-image">
-                    <i class="fas fa-home"></i>
-                    <p>SPARKLING CLEAN HOME IMAGE<br>Recommended size: 1920x1080px</p>
-                </div>
-            </div>
             <div class="hero-overlay">
                 <div class="container">
                     <div class="hero-content">
@@ -139,60 +136,59 @@
             </div>
         </section>
 
-        <!-- Testimonials Carousel -->
-        <section class="testimonials">
-            <div class="container">
-                <div class="section-header">
-                    <h2>What Our Clients Say</h2>
-                </div>
-                <div class="testimonials-carousel" id="testimonialsCarousel">
-                    <div class="testimonial-item active">
-                        <div class="testimonial-content">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>"Best Friends Cleaning transformed my home! Their attention to detail is incredible and they use eco-friendly products that are safe for my family."</p>
-                            <div class="testimonial-author">– Sarah Johnson, Salt Lake City</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>"Reliable, professional, and thorough. Milly and her team have been cleaning our Airbnb for over a year. Guests always comment on how clean everything is!"</p>
-                            <div class="testimonial-author">– David Martinez, Property Owner</div>
-                        </div>
-                    </div>
-                    <div class="testimonial-item">
-                        <div class="testimonial-content">
-                            <div class="stars">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <p>"They helped us with our move-out cleaning and we got our full deposit back! Their service exceeded our expectations."</p>
-                            <div class="testimonial-author">– Jennifer Chen, West Jordan</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-dots">
-                    <button class="dot active" onclick="currentSlide(1)"></button>
-                    <button class="dot" onclick="currentSlide(2)"></button>
-                    <button class="dot" onclick="currentSlide(3)"></button>
-                </div>
-            </div>
-        </section>
+       <!-- Testimonials Carousel -->
+		<section class="testimonials">
+			<div class="container">
+				<div class="section-header">
+					<h2>What Our Clients Say</h2>
+				</div>
+				<div class="testimonials-carousel" id="testimonialsCarousel">
+					<div class="testimonial-item active">
+						<div class="testimonial-content">
+							<div class="stars">
+								<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							</div>
+							<p>"As a painting contractor, we are constantly making an unbelievable amount of dust and other unforeseen messes that can be discouraging to home owners and contractors alike if not taken care of. Best Friends Cleaning Company has been a reliable source on numerous occasions for bringing our jobs up to a standard that we can be proud to present to any of our clients."</p>
+							<div class="testimonial-author">– Rob and Liann Saunders, Owners of Sugar House Painting, LLC</div>
+						</div>
+					</div>
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="stars">
+								<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							</div>
+							<p>"Owning multiple Airbnbs, we rely on Best Friends Cleaning Company for their prompt and thorough services. Even after guests leave a significant mess, they consistently deliver exceptional results. Their excellent communication ensures a smooth and reliable partnership."</p>
+							<div class="testimonial-author">– K.G, Owner of Airbnbs</div>
+						</div>
+					</div>
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="stars">
+								<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							</div>
+							<p>"As a realtor, I’m in and out of a lot of homes and know how dirty some places can get. I’ve referred Best Friends Cleaning Company to all my closest friends and family. These are the people you want cleaning your home! They are detailed, thorough, and do a phenomenal job from anything to a lighter clean to a deep clean. They are people who I always trust having in my home. They will leave you impressed and happy with a clean house!"</p>
+							<div class="testimonial-author">– Makenzie Cooley, Realtor</div>
+						</div>
+					</div>
+					<div class="testimonial-item">
+						<div class="testimonial-content">
+							<div class="stars">
+								<i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+							</div>
+							<p>"Mildred and Ruben are amazing people and the best cleaners I have ever worked with. They are an amazing dynamic duo that go above and beyond every time. They even went as far as to help me keep my house in order when I was injured and unable to walk. I trust them to get the job done every time."</p>
+							<div class="testimonial-author">– Holden Ackerman, Utah Resident</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="carousel-dots">
+					<button class="dot active" onclick="currentSlide(1)"></button>
+					<button class="dot" onclick="currentSlide(2)"></button>
+					<button class="dot" onclick="currentSlide(3)"></button>
+					<button class="dot" onclick="currentSlide(4)"></button>
+				</div>
+			</div>
+		</section>
 
         <!-- Call to Action -->
         <section class="cta">
@@ -257,7 +253,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Best Friends Cleaning Company, LLC. All rights reserved.</p>
+                <p>&copy; 2024 Best Friends Cleaning Company, LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
