@@ -1296,10 +1296,10 @@ body {
     align-items: center;
     gap: 0.5rem;
   }
-}
 
-/* Desktop navigation styles (screens 1024px and wider) */
-@media (min-width: 1024px) {
+
+/* === DESKTOP NAVIGATION (NOW STARTS AT 768PX) === */
+@media (min-width: 768px) {
   .nav-desktop {
     display: flex;
     gap: 2rem;
@@ -1320,20 +1320,30 @@ body {
     border-bottom: 2px solid var(--secondary-color);
   }
 
-  /* Hide hamburger button on desktop */
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
   .mobile-menu-btn {
     display: none;
   }
 }
 
-/* Mobile navigation styles (screens 1023px and below) */
-@media (max-width: 1023px) {
-  /* Hide desktop nav on mobile */
+/* === MOBILE NAVIGATION (NOW BELOW 768PX) === */
+@media (max-width: 767px) {
   .nav-desktop {
     display: none;
   }
 
-  /* Show hamburger button on mobile */
   .mobile-menu-btn {
     display: flex;
     align-items: center;
@@ -1349,74 +1359,6 @@ body {
     z-index: 1002;
   }
 }
-/* Mobile menu sliding animation */
-.mobile-menu {
-  position: fixed; /* add this if your menu should overlay content */
-  top: 0;
-  left: -100%;  /* hidden off-screen */
-  right: auto;
-  height: 100vh; /* full viewport height */
-  width: 250px;  /* adjust width as needed */
-  background-color: var(--white);
-  transition: left 0.3s ease;
-  z-index: 1001; /* below the button */
-  overflow-y: auto; /* scroll if content overflows */
-}
-
-.mobile-menu.active {
-  left: 0; /* slide in */
-}
-/* === CONTACT FORM MOBILE CLEANUP === */
-
-@media (max-width: 480px) {
-  .contact-content {
-    padding: 2rem 1rem;
-  }
-
-  .contact-info,
-  .contact-form-container {
-    padding: 1.25rem 1rem;
-  }
-
-  .contact-form .form-group {
-    margin-bottom: 1rem;
-  }
-
-  .contact-form input,
-  .contact-form select,
-  .contact-form textarea {
-    font-size: 0.9rem;
-    padding: 0.6rem 0.8rem;
-  }
-
-  .contact-form-container h2,
-  .contact-info h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact-item .contact-text h3,
-  .contact-item .contact-text p {
-    font-size: 0.9rem;
-  }
-}
-
-/* === FOOTER DESKTOP LAYOUT FIX === */
-@media (min-width: 768px) {
-  .footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem; /* more space between columns */
-  }
-}
-
-
-
-
-
-
-
-
-
 
 
 
