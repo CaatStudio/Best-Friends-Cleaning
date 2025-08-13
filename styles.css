@@ -1,269 +1,1369 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Best Friends Cleaning Company, LLC</title>
-    <meta name="description" content="Professional, eco-friendly cleaning services across the Wasatch Front. We clean your house to make it a lovely home again!">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Meta tags to prevent caching during development -->
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-</head>
-<body>
-    <!-- Sticky Header -->
-    <header class="header sticky">
-        <div class="container">
-            <div class="nav-wrapper">
-                <div class="logo">
-   					<a href="index.html" class="logo-link">
-        			<img src="images/logo-landscape.png" alt="Best Friends Cleaning Logo" class="logo-img">
-   					</a>
-					</div>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-                <nav class="nav-desktop">
-                    <a href="index.html" class="active">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="services.html">Services</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-               <div class="nav-actions">
-    <a href="tel:+18018315004" class="btn btn-call">
-        <i class="fas fa-phone"></i>
-        Call Now
-    </a>
-    <a href="mailto:bestfriendscleaningcompany@gmail.com" class="btn btn-outline">
-        <i class="fas fa-envelope"></i>
-        Email
-    </a>
-    <a href="contact.html" class="btn btn-primary">Get Estimate</a>
-</div>
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
 
-<!-- Botón hamburguesa fuera de nav-actions -->
-<button class="mobile-menu-btn" id="mobileMenuBtn">
-    <i class="fas fa-bars"></i>
-</button>
-            </div>
-        </div>
+.container {
+    width: 100%;
+    max-width: 1200px; /* desktop max width */
+    margin: 0 auto;
+    padding: 0 1rem; /* horizontal breathing room on all screens */
+    box-sizing: border-box;
+}
 
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <div class="mobile-menu-content">
-                <div class="mobile-menu-header">
-                    <div class="logo">
-                        <span class="logo-text">Best Friends Cleaning</span>
-                    </div>
-                    <button class="mobile-menu-close" id="mobileMenuClose">
-                        <i class="fas fa-times"></i>
-                    </button>
-                </div>
-                <nav class="mobile-nav">
-                    <a href="index.html">Home</a>
-                    <a href="about.html">About Us</a>
-                    <a href="services.html">Services</a>
-                    <a href="gallery.html">Gallery</a>
-                    <a href="faq.html">FAQ</a>
-                    <a href="contact.html">Contact</a>
-                </nav>
-                <div class="mobile-menu-footer">
-                    <a href="tel:+18018315004" class="btn btn-call btn-full">
-                        <i class="fas fa-phone"></i>
-                        Call Now
-                    </a>
-                    <a href="mailto:bestfriendscleaningcompany@gmail.com" class="btn btn-outline btn-full">
-                        <i class="fas fa-envelope"></i>
-                        Email
-                    </a>
-                    <a href="contact.html" class="btn btn-primary btn-full">Get Estimate</a>
-                </div>
-            </div>
-        </div>
-    </header>
+/* Brand Colors */
+:root {
+    --primary-color: #4A90E2;      /* Light Blue */
+    --secondary-color: #50C878;     /* Green */
+    --accent-color: #50C878;        /* Eco Green */
+    --text-dark: #333333;
+    --text-light: #666666;
+    --text-muted: #999999;
+    --bg-light: #f8f9fa;
+    --bg-section: #fafbfc;
+    --white: #ffffff;
+    --border-light: #e5e5e5;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --shadow-hover: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
 
-    <!-- HOME PAGE CONTENT ONLY -->
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-overlay">
-                <div class="container">
-                    <div class="hero-content">
-                        <h1>We clean your house to make it a lovely home again!</h1>
-                        <p class="hero-subtitle">Professional, eco-friendly cleaning services across the Wasatch Front</p>
-                        <div class="hero-buttons">
-                            <a href="contact.html" class="btn btn-primary btn-large">Book Now</a>
-                            <a href="contact.html" class="btn btn-secondary btn-large">Get Free Quote</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
 
-        <!-- Services Preview -->
-        <section class="services-preview">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Our Cleaning Services</h2>
-                    <p>Professional cleaning solutions for every need</p>
-                </div>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-bed"></i>
-                        </div>
-                        <h3>Airbnb Cleaning</h3>
-                        <p>Keep your rental property spotless for guests</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-home"></i>
-                        </div>
-                        <h3>Residential Cleaning</h3>
-                        <p>Regular housekeeping for your home</p>
-                    </div>
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-truck"></i>
-                        </div>
-                        <h3>Move In/Out</h3>
-                        <p>Complete cleaning for moving transitions</p>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a href="services.html" class="btn btn-outline">View All Services</a>
-                </div>
-            </div>
-        </section>
-<!-- Testimonials Carousel -->
-<section class="testimonials">
-  <div class="container">
-    <div class="section-header">
-      <h2>What Our Clients Say</h2>
-    </div>
-    <div class="testimonials-carousel" id="testimonialsCarousel">
-      <!-- Testimonial Items -->
-      <div class="testimonial-item active">
-        <div class="testimonial-content">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p>"As a painting contractor... to a standard that we can be proud to present."</p>
-          <div class="testimonial-author">– Rob and Liann Saunders</div>
-        </div>
-      </div>
+/* Image Placeholders */
+.image-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    text-align: center;
+    color: #666;
+    font-weight: 500;
+    border-radius: 0.5rem;
+    width: 100%;
+    height: 100%;
+}
 
-      <div class="testimonial-item">
-        <div class="testimonial-content">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p>"Owning multiple Airbnbs... smooth and reliable partnership."</p>
-          <div class="testimonial-author">– K.G</div>
-        </div>
-      </div>
+.image-placeholder i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #999;
+}
 
-      <div class="testimonial-item">
-        <div class="testimonial-content">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p>"As a realtor... impressed and happy with a clean house!"</p>
-          <div class="testimonial-author">– Makenzie Cooley</div>
-        </div>
-      </div>
+.image-placeholder p {
+    font-size: 0.875rem;
+    line-height: 1.4;
+}
 
-      <div class="testimonial-item">
-        <div class="testimonial-content">
-          <div class="stars">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-          </div>
-          <p>"Mildred and Ruben... You can trust them every time."</p>
-          <div class="testimonial-author">– Holden Ackerman</div>
-        </div>
-      </div>
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
 
-      <!-- Navigation Dots -->
-   <div class="testimonial-dots">
-  		<span class="testimonial-dot active" onclick="currentSlide(1)"></span>
- 	 	<span class="testimonial-dot" onclick="currentSlide(2)"></span>
-  		<span class="testimonial-dot" onclick="currentSlide(3)"></span>
- 	 	<span class="testimonial-dot" onclick="currentSlide(4)"></span>
-	</div>
-    </div>
-  </div>
-</section>
-		
-        <!-- Call to Action -->
-        <section class="cta">
-            <div class="container">
-                <div class="cta-content">
-                    <h2>Ready for a spotless home?</h2>
-                    <p>Contact us today for your free estimate!</p>
-                    <div class="cta-buttons">
-                        <a href="tel:+18018315004" class="btn btn-call btn-large">
-                            <i class="fas fa-phone"></i>
-                            Call Now
-                        </a>
-                        <a href="contact.html" class="btn btn-primary btn-large">Get Free Estimate</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <span>801-831-5004</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <span>bestfriendscleaningcompany@gmail.com</span>
-                    </div>
-                    <div class="contact-item">
-                        <i class="fas fa-clock"></i>
-                        <span>Mon–Fri: 8 am–8 pm</span>
-                    </div>
-                </div>
-                <div class="footer-section">
-                    <h3>Services</h3>
-                    <ul>
-                        <li><a href="services.html">Airbnb Cleaning</a></li>
-                        <li><a href="services.html">Residential Housekeeping</a></li>
-                        <li><a href="services.html">Move-In/Move-Out</a></li>
-                        <li><a href="services.html">Post-Construction</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Company</h3>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQ</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h3>Follow Us</h3>
-                    <div class="social-links">
-                        <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-                        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 Best Friends Cleaning Company, LLC. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+.btn-primary:hover {
+    background-color: #357ABD;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+	 display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background-color: #6BC91A;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-call {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.btn-call:hover {
+    background-color: #45B86B;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-outline {
+    background-color: var(--white);
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+}
+
+.btn-large {
+    padding: 1rem 2rem;
+    font-size: 1rem;
+}
+
+.btn-full {
+    width: 100%;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+}
+
+.header.sticky {
+    position: sticky;
+    top: 0;
+    box-shadow: var(--shadow);
+}
+
+.nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 6rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo-link {
+    text-decoration: none;
+}
+
+.logo-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.logo-img {
+    height: 60px; /* adjust as needed */
+    width: auto;  /* keeps aspect ratio */
+    display: block;
+}
+
+
+/* Mobile Menu */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--white);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: left 0.3s ease;
+    z-index: 1001;
+}
+
+.mobile-menu.active {
+    left: 0;
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 1rem;
+}
+
+.mobile-menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-light);
+}
+
+.mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    cursor: pointer;
+    color: var(--text-dark);
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.mobile-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid var(--border-light);
+    transition: color 0.3s ease;
+}
+
+.mobile-nav a:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu-footer {
+    margin-top: auto;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Hero Section */
+.hero {
+	margin-top: 0;
+    padding-top: 0;
+    position: relative;
+    min-height: calc(38vh - 4rem);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hero-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+	margin: 0;
+    padding: 0;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    min-height: 70vh;
+}
+
+.hero-overlay {
+	margin: 0;
+    padding: 0;
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, rgba(74, 144, 226, 0.8), rgba(126, 211, 33, 0.6));
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    text-align: center;
+    color: var(--white);
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center; 
+
+}
+
+/* Page Header */
+.page-header {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 4rem 0 2rem;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.section-header p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Services Preview */
+.services-preview {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.service-card {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-light);
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.service-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.service-card p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Before & After Gallery */
+.before-after-gallery {
+    padding: 4rem 0;
+    background-color: var(--bg-section);
+}
+
+.gallery-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 800px; /* Max width for the gallery */
+    margin: 0 auto 2rem;
+}
+
+.image-comparison-container {
+  position: relative;
+  width: 800px;     /* or your desired width */
+  height: 500px;    /* set height */
+  overflow: hidden;
+  user-select: none;
+  touch-action: none; /* better touch handling */
+}
+
+.image-comparison-container img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  user-select: none;
+}
+
+.before-image {
+  z-index: 1;
+}
+
+.after-image {
+  z-index: 2;
+  clip-path: polygon(0 0, var(--slider-pos, 50%) 0, var(--slider-pos, 50%) 100%, 0% 100%);
+  transition: clip-path 0.1s ease;
+}
+
+.slider-divider {
+  position: absolute;
+  top: 0;
+  left: var(--slider-pos, 50%);
+  height: 100%;
+  width: 30px;             /* bigger hit area */
+  margin-left: -15px;      /* center the wider hit area */
+  background-color: transparent;
+  cursor: ew-resize;
+  z-index: 3;
+  user-select: none;
+}
+
+/* Add a visible thin line inside slider-divider */
+.slider-divider::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;          /* center line horizontally */
+  transform: translateX(-50%);
+  width: 4px;         /* line thickness */
+  height: 100%;
+  background-color: #fff;  /* visible white line */
+  pointer-events: none;    /* so line doesn't block dragging */
+  border-radius: 2px;
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0.7);
+}
+
+.slider-handle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 28px;
+  height: 28px;
+  background: white;
+  border: 2px solid black;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 6px rgba(0,0,0,0.3);
+  pointer-events: none;   /* so events hit parent */
+  z-index: 4;
+}
+
+
+
+.slider-handle::before,
+.slider-handle::after {
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 16px;
+    background-color: var(--white);
+}
+
+.slider-handle::before {
+    transform: translateX(-4px);
+}
+
+.slider-handle::after {
+    transform: translateX(4px);
+}
+
+.gallery-nav-btn {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  font-size: 24px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 20px; /* spacing from images */
+  user-select: none;
+  z-index: 10; /* make sure it’s above images */
+  transition: background-color 0.3s ease;
+}
+
+.gallery-nav-btn:hover {
+  background-color: #eee;
+}
+
+.gallery-nav-btn.prev {
+    margin-right: -2rem; /* Overlap slightly for better visual flow */
+}
+
+.gallery-nav-btn.next {
+    margin-left: -2rem; /* Overlap slightly for better visual flow */
+}
+
+.gallery-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.gallery-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--border-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.gallery-dot.active,
+.gallery-dot:hover {
+    background-color: var(--primary-color);
+}
+
+
+/* Testimonials */
+.testimonials {
+    padding: 4rem 0;
+    background-color: var(--bg-section);
+}
+
+.testimonials-carousel {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto 2rem;
+}
+
+.testimonial-item {
+    display: none;
+    text-align: center;
+    padding: 2rem;
+}
+
+.testimonial-item.active {
+    display: block;
+}
+
+.testimonial-content {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.testimonial-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background-color: #ccc;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.testimonial-dot.active,
+.testimonial-dot:hover {
+    background-color: #007bff;
+}
+
+.stars {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.stars i {
+    color: #FFD700;
+    font-size: 1.25rem;
+}
+
+.testimonial-content p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--border-light);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active,
+.dot:hover {
+    background-color: var(--primary-color);
+}
+
+/* Call to Action */
+.cta {
+    padding: 4rem 0;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    text-align: center;
+}
+
+.cta-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.cta-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center; 
+	justify-content: center; 
+
+}
+
+/* About Content */
+.about-content {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* two equal columns */
+    gap: 2rem; /* space between image and text */
+    align-items: start; /* text starts at the top */
+}
+
+
+.about-image img {
+    width: 100%;       /* full width inside its column */
+    height: auto;      /* maintain aspect ratio */
+    max-width: 100%;   /* prevent overflow */
+    border-radius: 0.5rem;
+    display: block;
+    object-fit: cover; /* keeps it looking nice */
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Our Story Timeline */
+.our-story {
+    padding: 4rem 0;
+    background-color: var(--bg-section);
+}
+
+.story-timeline {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    align-items: flex-start;
+}
+
+.timeline-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.timeline-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.timeline-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.timeline-content p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Mission */
+.mission {
+    padding: 4rem 0;
+    background-color: var(--white);
+    text-align: center;
+}
+
+.mission-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.mission-icon {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+}
+
+.mission-icon i {
+    font-size: 2rem;
+    color: var(--white);
+}
+
+.mission-content h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.mission-content p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+    line-height: 1.8;
+}
+
+/* Values */
+.values {
+    padding: 4rem 0;
+    background-color: var(--bg-section);
+}
+
+.values-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.value-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+}
+
+.value-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.value-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.value-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.value-item h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.value-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Why Choose Us */
+.why-choose {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.choose-grid {
+    display: grid;
+    gap: 2rem;
+}
+
+.choose-item {
+    text-align: center;
+    padding: 2rem;
+    border-radius: 1rem;
+    background-color: var(--bg-section);
+    transition: all 0.3s ease;
+}
+
+.choose-item:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.choose-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.choose-icon i {
+    font-size: 1.5rem;
+    color: var(--white);
+}
+
+.choose-item h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.75rem;
+    color: var(--text-dark);
+}
+
+.choose-item p {
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* Contact Page Specific Styles */
+.contact-content {
+    padding: 4rem 0;
+    background-color: var(--white);
+}
+
+.contact-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: flex-start; /* Align items to the top */
+    grid-template-columns: 1fr 1fr; /* Dos columnas en escritorio */
+}
+
+.contact-info {
+    background-color: var(--bg-section);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+.contact-details {
+    display: grid;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start; /* Align icon and text to the top */
+    gap: 1rem;
+}
+
+.contact-item .contact-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+.contact-item .contact-icon i {
+    font-size: 1.25rem;
+    color: var(--white);
+}
+
+.contact-item .contact-text h3 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+    color: var(--text-dark);
+}
+
+.contact-item .contact-text p {
+    font-size: 0.95rem;
+    color: var(--text-light);
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.quick-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.contact-form-container {
+    background-color: var(--white);
+    padding: 2.5rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border-light);
+}
+
+.contact-form-container h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.contact-form .form-row {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr; /* Dos columnas para los inputs */
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form input[type="tel"],
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--border-light);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    color: var(--text-dark);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input[type="text"]:focus,
+.contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.map-section {
+    padding: 4rem 0;
+    background-color: var(--bg-section);
+    text-align: center;
+}
+
+.map-section h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 600px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.map-placeholder iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+/* MEDIA QUERIES PARA RESPONSIVE */
+@media (max-width: 1024px) {
+    .contact-grid {
+        grid-template-columns: 1fr; /* Una columna en tablets y móviles */
+    }
+    .contact-form .form-row {
+        grid-template-columns: 1fr; /* Inputs en una columna */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-content {
+        padding: 2rem 1rem;
+    }
+    .contact-info, .contact-form-container {
+        padding: 1.5rem 1rem;
+    }
+    .contact-info h2, .contact-form-container h2 {
+        font-size: 1.5rem;
+    }
+    .contact-info p, .contact-item .contact-text p, .contact-item .contact-text h3 {
+        font-size: 0.9rem;
+    }
+    .map-placeholder {
+        height: 250px;
+    }
+}
+
+
+
+/* Footer */
+.footer {
+    background-color: var(--text-dark);
+    color: var(--white);
+    padding: 3rem 0 1rem;
+}
+
+.footer-content {
+    display: grid;
+    gap: 2rem; /* default gap for mobile */
+    margin-bottom: 2rem;
+}
+
+/* Multi-column layout for larger screens with more space */
+@media (min-width: 768px) {
+    .footer-content {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 3rem; /* extra space between columns */
+    }
+}
+
+.footer-section h3 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+	margin-right: 2rem;
+    color: var(--white);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: var(--white);
+}
+
+.footer .contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.footer .contact-item i {
+    color: var(--primary-color);
+    width: 1.25rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1rem;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.875rem;
+}
+  /* Mobile Menu */
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: auto; /* pushes it to the right */
+}
+
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  .mobile-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+  }
+
+  .mobile-menu-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .mobile-nav {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .mobile-nav a {
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+  }
+
+  .mobile-menu-footer {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+  }
+
+  .btn-full {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Hero Section Adjustments */
+  .hero-content h1 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+/* === DESKTOP NAVIGATION (>=768px) === */
+@media (min-width: 768px) {
+  .nav-desktop {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .nav-desktop a {
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+  }
+
+  .nav-desktop a.active,
+  .nav-desktop a:hover {
+    color: var(--secondary-color);
+    border-bottom: 2px solid var(--secondary-color);
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mobile-menu-btn {
+    display: none !important; /* Hide hamburger in desktop */
+  }
+}
+
+/* === MOBILE NAVIGATION (<768px) === */
+@media (max-width: 767px) {
+  /* Hide desktop links and actions */
+  .nav-desktop,
+  .nav-actions {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    cursor: pointer;
+    position: relative;
+    z-index: 1002;
+  }
+}
+
+
+
+
+
+
